@@ -33,8 +33,32 @@ subplot(3,3,9);imagesc([0 pi/2],[0 size(sexp.sqpde,1)],sexp.sqpde.*(sexp.sqpde>0
 
 sb=size(s.Betas,1);
 r=1:numel(s.PESId);
-figure('Position',[654  640 730 180]);
+figure('Position',[654  640 785 180]);
 subplot(1,sb+1,1); plot(r,s.PESId);title('PESId');xlabel('radius');ylabel('intensity');
 for nsb=1:sb
       subplot(1,sb+1,1+nsb);  plot(r,s.Betas(nsb,:).*(s.Betas(1,:)>5) ); title(['\beta_{' num2str(nsb*2-2) '}']);xlabel('radius');ylabel('intensity');  
 end
+%% go 4D but resample because otherwise it's slow
+clear be xq s3 s2 s1
+[br, xq]=resample(s.Betas',1:size(s.Betas,2),64/size(s.Betas,2),5,5);
+ br=br';
+figure('Position',[1050 170 390 390]);
+xx=[-fliplr(xq) xq(2:end)];
+[X Y Z]=meshgrid(xx);
+[s1 s2 s3]=beta2cart(br);
+
+s3(s3<0.05*max(s3(:)))=nan; % take out small values for visualization
+h = slice(X,Y,Z,s3, [], [], xx);
+set(h, 'EdgeColor','none', 'FaceColor','interp');
+% set view
+axis tight; daspect([1 1 1])
+view([20,25])
+
+% normalize s3 for alpha (transparency) map
+ns3=(s3(:)-min(s3(:)))./(max(s3(:))-min(s3(:)));
+ns3=reshape(ns3,size(s3));
+% set alpha map
+for n=1:numel(h)
+    set(h(n),'AlphaData',ns3(:,:,n),'FaceAlpha','interp')
+end
+title('s(3)');
