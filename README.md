@@ -9,6 +9,9 @@ There are several extensions included beyond the original paper:
 * Limit Legendre order toward the origin to reduce overfitting errors
 * Support of NaN values for masking the raw images
 * The code supports images of up to 4K. bld_lut.m was added for radial basis set generation of arbitrary size. 
+* Added beta2cart.m to get the 2D and 3D reconstruction based on beta parameteres. 
+* Added LDSD.m to apply Legendre decomposition for a single data vector spanning [0,2*pi] 
+* Added cart2tripolar.m to allow only cart2polar transform for any quandrant an to the range  [0,2*pi].
 
 Run the script pop_example to see the various outputs of POP.m
   
