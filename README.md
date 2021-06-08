@@ -1,14 +1,14 @@
 [![View PolarOnionPeeling on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/41064-polaronionpeeling)
 # PolarOnionPeeling
-The code implements the method shown at "Toward real-time charged-particle image reconstruction using polar onion-peeling" by G.M. Roberts et-al, Rev. Sci. Instr. 80, 053104 (2009). It supports images of up to 4K and accepts arbitrary (even) beta parameters. Specific quadrants of the image can be selected in the analysis in case of image asymmetries. NaN values can be used for masking unwanted pixels or areas.
-For more info regarding the method see: https://doi.org/10.1063/1.3126527
+The code implements the method shown at "Toward real-time charged-particle image reconstruction using polar onion-peeling" by G.M. Roberts et-al, Rev. Sci. Instr. 80, 053104 (2009)  https://doi.org/10.1063/1.3126527
 
 There are several extensions included beyond the original paper:
 
 * Support of higher Legendre orders
-* Limit Legendre order toward the origin to reduce overfitting errors
-* Support of NaN values for masking the raw images
-* The code supports images of up to 4K. bld_lut.m was added for radial basis set generation of arbitrary size. 
+* Specific quadrants of the image can be selected in the analysis in case of image asymmetries.
+* Limit Legendre order toward the origin to restrict overfitting.
+* Support of NaN values for masking unwanted pixels or areas of raw images.
+* Supports images of up to 4K x 4K pixels. bld_lut.m was added for radial basis set generation of arbitrary size. 
 * Added beta2cart.m to get the 2D and 3D reconstruction based on beta parameteres. 
 * Added LDSD.m to apply Legendre decomposition for a single data vector spanning [0,2*pi] 
 * Added cart2tripolar.m to allow only cart2polar transform for any quandrant an to the range  [0,2*pi].
