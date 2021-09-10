@@ -11,7 +11,7 @@ There are several extensions included beyond the original paper:
 * Supports images of up to 4K x 4K pixels. bld_lut.m was added for radial basis set generation of arbitrary size. 
 * Added beta2cart.m to get the 2D and 3D reconstruction based on beta parameteres. 
 * Added LDSD.m to apply Legendre decomposition for a single data vector spanning [0,2*pi] 
-* Added LDSDw.m to apply a weighten least squares fit for Legendre decomposition of a single data vector spanning [0,2*pi] 
+* Added LDSDw.m - a weighted least squares fit version of LDSD 
 * Added LDSDw_example.m a script that demostranted LDSDw for random beta2 abd beta4 inputs. 
 * Added cart2tripolar.m to allow only cart2polar transform for any quandrant an to the range  [0,2*pi].
 
