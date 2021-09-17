@@ -12,7 +12,7 @@ There are several extensions included beyond the original paper:
 * Added beta2cart.m to get the 2D and 3D reconstruction based on beta parameteres. 
 * Added LDSD.m to apply Legendre decomposition for a single data vector spanning [0,2*pi] 
 * Added LDSDw.m - a weighted least squares fit version of LDSD 
-* Added LDSDw_example.m a script that demostranted LDSDw for random beta2 abd beta4 inputs. 
+* Added LDSDw_example.m a script that demostranted LDSDw for random beta2 and beta4 inputs. 
 * Added cart2tripolar.m to allow only cart2polar transform for any quandrant an to the range  [0,2*pi].
 
 Run the script pop_example to see the various outputs of POP.m
