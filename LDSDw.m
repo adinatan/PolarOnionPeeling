@@ -2,7 +2,7 @@ function [betas varargout]=LDSDw(vec, bParams, w)
 warning('off','all')
 
 % Apply Legendre decomposition for a single data vector spanning [0,2*pi]
-% using weigted leasr squares (WLS)
+% using weigted least squares (WLS)
 %
 % Inputs:
 %  vec      - a vector that contain information that spans 0 to 2*pi
